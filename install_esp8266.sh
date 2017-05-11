@@ -82,7 +82,7 @@ function answer_yes {
 }
 function answer_no {
 	printf "${GREEN} > You need to call ${YELLOW}export PATH=$ESP_INSTALL_DIR/xtensa-lx106-elf/bin:\$PATH${GREEN} at the beginning of each session.${NC}\n";
-	if [[ ":$PATH:" == *"$ESP_INSTALL_DIR/xtensa-lx106-elf/bin:"* ]]; then
+	if [[ ":$PATH:" == *":$ESP_INSTALL_DIR/xtensa-lx106-elf/bin:"* ]]; then
 		printf "${GREEN} > ${YELLOW}$ESP_INSTALL_DIR/xtensa-lx106-elf/bin${GREEN} is already in \$PATH.${NC}\n"
 	else
 		export PATH=$ESP_INSTALL_DIR/xtensa-lx106-elf/bin:$PATH;
