@@ -103,7 +103,7 @@ fi
 # Ask if user wants to be added to dialout
 function question { printf "${GREEN} > Do you wish to be added to ${YELLOW}dialout${GREEN} group?${NC}"; }
 function answer_yes { sudo adduser $(whoami) dialout; }
-if getent group dialout | grep &>/dev/null "\b${whoami}\b"; then
+if id -nG $(whoami) | grep -qw "dialout"; then
 	printf "${GREEN} > ${YELLOW}$(whoami)${GREEN} is already in dialout group.${NC}\n"
 else
 	ask question answer_yes
