@@ -1,0 +1,31 @@
+
+usage: install_esp8266.sh [options]
+
+This installer downloads the Xtensa code repository
+and sets up the environment so that the cross-compiler
+can be built. After execution, the xtensa-lx106-elf-gcc
+and xtensa-lx106-elf-g++ compilers become available to
+deploy code for the ESP8266. Several options, and
+associated variables, exist to adjust the behavior of
+the installer. These options are as follows:
+
+-ns, --not_standalone
+	With this option, the installer does not build a
+	standalone compiler. This means you need to include
+	all libraries manually when compiling your code.
+	This can be left out as the default is to build a
+	standalone cross-compiler.
+
+-e=value, --esp_sdk_dir=value
+	This allows you to define the directory into which
+	the Xtensa code repository will be downloaded into
+	(relative to ./). Leave as default if you do not want
+	to worry about setting PATH variables manually (although
+	the installer should take care of that for you).
+
+-u, --update
+	Updates the entire code repository and re-compiles
+	everything.
+
+-h, --help
+	This screen

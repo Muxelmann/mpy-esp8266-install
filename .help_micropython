@@ -1,0 +1,30 @@
+
+usage: install_micropython.sh [options]
+
+The installer downloads the latest code repository to
+build Micropython. Several options, some with corres-
+ponding values, can be passed into the installer. These
+options are outlined as follows:
+
+-m=value, --mpy_sdk_dir=value
+	Assigns the directory (relative to ./) where
+	Micropython will be downloaded and installed into.
+
+-u, --update
+	Informs the installer that an updated version of
+	Micropython should be downloaded.
+
+	!!! Conflicts with -r !!!
+	The latter command is executed
+
+-r, --recompile
+	Informs the installer that the Micropython firmware
+	should be recompiled. This useful if you want to add
+	your own code and need not doenload the latest
+	version of Micropython.
+
+	!!! Conflicts with -u !!!
+	The latter command is executed
+
+-h, --help
+	This screen
